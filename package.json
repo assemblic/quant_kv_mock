@@ -1,0 +1,28 @@
+{
+  "name": "@assemblic/quant-kv-mock",
+  "version": "1.0.0",
+  "description": "Mock implementation of Quant's KV Store for local development",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "lint": "eslint src/**/*.js"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "eslint": "^9.23.0"
+  },
+  "jest": {
+    "transform": {},
+    "testEnvironment": "node",
+    "moduleNameMapper": {
+      "^(\\.{1,2}/.*)\\.js$": "$1"
+    }
+  },
+  "resolutions": {
+    "glob": "^11.0.1",
+    "rimraf": "^6.0.1",
+    "@humanwhocodes/config-array": "@eslint/config-array",
+    "@humanwhocodes/object-schema": "@eslint/object-schema"
+  }
+} 

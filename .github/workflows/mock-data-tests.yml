@@ -1,0 +1,37 @@
+name: Mock Data Tests
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'src/mockKvImplementation.js'
+      - 'src/validateMockData.js'
+      - 'src/__tests__/mockData.test.js'
+      - 'src/defaultMockData.json'
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - 'src/mockKvImplementation.js'
+      - 'src/validateMockData.js'
+      - 'src/__tests__/mockData.test.js'
+      - 'src/defaultMockData.json'
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  mock-data-tests:
+    runs-on: self-hosted
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run mock data tests
+        run: npm test -- src/__tests__/mockData.test.js 

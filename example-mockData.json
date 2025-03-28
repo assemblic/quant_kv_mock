@@ -1,0 +1,33 @@
+{
+  "dash_jwt_secret": "your-local-jwt-secret",
+  "git_encryption_key": "your-local-encryption-key",
+  "mock-user-store": {
+    "auth0-123456": {
+      "username": "your-username",
+      "password": "your-password",
+      "teams": [
+        {
+          "id": "your-team-id",
+          "role": "owner",
+          "joined_at": "2024-03-20T00:00:00.000Z"
+        }
+      ]
+    }
+  },
+  "mock-team-store": {
+    "your-team-id": {
+      "name": "Your Team",
+      "owner": "auth0-123456",
+      "members": ["auth0-123456"],
+      "projects": ["your-project-id"],
+      "created_at": "2024-03-20T00:00:00.000Z"
+    }
+  },
+  "mock-project-store": {
+    "your-project-id": {
+      "name": "Your Project",
+      "team": "your-team-id",
+      "created_at": "2024-03-20T00:00:00.000Z"
+    }
+  }
+} 

@@ -1,0 +1,36 @@
+{
+  "dash_jwt_secret": "mock-jwt-secret-123456",
+  "git_encryption_key": "mock-encryption-key-abcdef",
+  "user_store": "mock-user-store",
+  "team_store": "mock-team-store",
+  "project_store": "mock-project-store",
+  "mock-user-store": {
+    "auth0-123456": {
+      "username": "mockuser",
+      "password": "mockpassword123",
+      "teams": [
+        {
+          "id": "mock-team-1",
+          "role": "owner",
+          "joined_at": "2024-03-20T00:00:00.000Z"
+        }
+      ]
+    }
+  },
+  "mock-team-store": {
+    "mock-team-1": {
+      "name": "Mock Team",
+      "owner": "auth0-123456",
+      "members": ["auth0-123456"],
+      "projects": ["mock-project-1"],
+      "created_at": "2024-03-20T00:00:00.000Z"
+    }
+  },
+  "mock-project-store": {
+    "mock-project-1": {
+      "name": "Mock Project",
+      "team": "mock-team-1",
+      "created_at": "2024-03-20T00:00:00.000Z"
+    }
+  }
+} 
