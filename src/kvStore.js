@@ -37,7 +37,8 @@ class KVStore {
   }
 }
 
-export default KVStore;
+// Make KVStore a named export instead of default
+export { KVStore };
 
 /**
  * Implementation of KV Store for local development
@@ -81,4 +82,5 @@ const createKVStore = (storeName) => {
   };
 };
 
+// Keep createKVStore as the default export
 export default createKVStore; 
